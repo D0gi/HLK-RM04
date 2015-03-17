@@ -13,12 +13,12 @@ config wifi-device  radio0
 
 config wifi-iface
         option device   radio0
-        option network  'homelan'
-        option mode     'sta'
-#       option wds      '1'	#	This might not work on many devices as both ends sometimes implement it differently
-        option ssid     'Radulescu'
+        option network  'homelan'	#	Necessary to configur in 'network' (e.g. DHCP)	
+        option mode     'sta'		#	Means 'client-mode'
+#       option wds      '1'		#	This might not work on many devices as both ends sometimes implement it differently
+        option ssid     'Gulaschkanone'
         option encryption 'psk2'
-        option key      'crdq2f6qwv'
+        option key      'blablub3'
 
 ###	Use these to listen for connections.
 ###	In our build we don't even include a DHCP server!
@@ -28,5 +28,5 @@ config wifi-iface
 #        option device   radio0
 #        option network  'admin'
 #        option mode     'ap'
-#        option ssid     'SmartSwitch'
+#        option ssid     'dog'
 #        option encryption none

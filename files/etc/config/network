@@ -5,27 +5,44 @@ config interface 'loopback'
         option netmask '255.0.0.0'
 
 config globals 'globals'
-        option ula_prefix 'fd39:c0bb:5748::/48'
+        option ula_prefix 'fd0a:73c1:eccc::/48'
 
-config interface 'lan'
+config interface 'lan'			#	br-lan (includs eth0.1) with static IP
         option ifname 'eth0.1'
-#       option type 'bridge'
-#       option proto 'dhcp'
+        option force_link '1'
+        option macaddr 'ae:a2:13:98:6e:68'
+        option type 'bridge'
         option proto 'static'
-        option ipaddr '192.168.11.1'
+#        option proto 'dhcp'
+        option ipaddr '192.168.1.1'
         option netmask '255.255.255.0'
         option ip6assign '60'
-#       option macaddr '44:33:4c:ba:af:83'
 
 config interface 'wan'
         option ifname 'eth0.2'
-        option proto 'dhcp'
-#       option macaddr '44:33:4c:ba:af:85'
-
-config interface 'homelan'
+        option force_link '1'
+        option macaddr 'ae:a2:13:98:6e:69'
         option proto 'dhcp'
 
-config interface homelan6
-        option ifname   @homelan
-        option proto    'dhcpv6'
+config interface 'wan6'
+        option ifname 'eth0.2'
+        option proto 'dhcpv6'
 
+config switch
+        option name 'switch0'
+        option reset '1'
+        option enable_vlan '1'
+
+config switch_vlan
+        option device 'switch0'
+        option vlan '1'
+        option ports '0 1 2 3 6t'
+
+config switch_vlan
+        option device 'switch0'
+        option vlan '2'
+        option ports '4 6t'
+
+
+config interface homelan 	#	For Wlan (in client-mode)
+	option proto 'dhcp'
