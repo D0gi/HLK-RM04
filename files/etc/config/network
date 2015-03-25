@@ -14,7 +14,7 @@ config interface 'lan'			#	br-lan (includs eth0.1) with static IP
         option type 'bridge'
 #        option proto 'static'
 #        option proto 'dhcp'
-        option ipaddr '192.168.1.22'
+#       option ipaddr '192.168.1.22'
         option netmask '255.255.255.0'
         option ip6assign '60'
 
