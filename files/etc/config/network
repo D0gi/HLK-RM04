@@ -9,7 +9,7 @@ config globals 'globals'
 
 config interface 'lan'			#	br-lan (includs eth0.1) with static IP
         option ifname 'eth0.1'
-        option force_link '1'
+#        option force_link '1'
         option macaddr 'ae:a2:13:98:6e:68'
         option type 'bridge'
         option proto 'static'

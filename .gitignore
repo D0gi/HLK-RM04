@@ -1,4 +1,5 @@
 *.o
+files/etc/config/wireless
 .DS_Store
 .*.swp
 .svn
