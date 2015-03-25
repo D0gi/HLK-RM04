@@ -21,7 +21,6 @@ config wifi-iface
         option encryption 'psk2'
         option key      'blablub3'
 
-
 ###	Use these to listen for connections.
 ###	In our build we don't even include a DHCP server!
 ###	This actually could interfere with the signal so it's disabled by default
