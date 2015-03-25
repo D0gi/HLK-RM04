@@ -17,9 +17,13 @@ config wifi-iface
         option mode     'sta'		#	Means 'client-mode'
 #       option wds      '1'		#	This might not work on many devices as both ends sometimes implement it differently
 
-        option ssid     'bla'
+#        option ssid     'bla'
+#        option encryption 'psk2'
+#        option key      'blablub3'
+        
+        option ssid     'EOD-WLAN'
         option encryption 'psk2'
-        option key      'blablub3'
+        option key      'swapturnsnibblesmoep!'
 
 ###	Use these to listen for connections.
 ###	In our build we don't even include a DHCP server!
