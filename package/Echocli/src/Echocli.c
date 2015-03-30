@@ -20,7 +20,7 @@ int main(int argc , char *argv[])
     }
     puts("Socket created");
      
-    server.sin_addr.s_addr = inet_addr("127.0.0.1");
+    server.sin_addr.s_addr = inet_addr("192.168.1.108");
     server.sin_family = AF_INET;
     server.sin_port = htons( 8888 );
  
@@ -38,14 +38,13 @@ int main(int argc , char *argv[])
     {
         printf("Enter message : ");
         scanf("%s" , message);
-         
         //Send some data
-        if( send(sock , message , strlen(message)+1 , 0) < 0) // +1 to get the "\0"  on the end of the string
+        if( send(sock , message , strlen(message)+1 , 0) < 0) // +1 to get the "\0" on the and of the string
         {
             puts("Send failed");
             return 1;
         }
-         
+         printf("%i\n",strlen(message));
         //Receive a reply from the server
         if( recv(sock , server_reply , 2000 , 0) < 0)
         {
@@ -55,6 +54,7 @@ int main(int argc , char *argv[])
          
         puts("Server reply :");
         puts(server_reply);
+	fflush(stdout);
     }
      
     close(sock);
