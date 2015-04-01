@@ -188,7 +188,7 @@
 			pinctrl-names = "default";
 			pinctrl-0 = <&i2c_pins>;
 
-			status = "disabled";
+			status = "okay";
 		};
 
 		spi@b00 {
