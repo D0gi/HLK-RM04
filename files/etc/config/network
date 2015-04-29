@@ -25,4 +25,5 @@ config interface 'wan'
         option proto 'dhcp'
 
 config interface homelan 	#	For Wlan (in client-mode)
+	option hostname 'dog1'
 	option proto 'dhcp'

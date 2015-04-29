@@ -23,7 +23,7 @@ config wifi-iface
         
         option ssid     'EOD-WLAN'
         option encryption 'psk2'
-        option key      'swapturnsnibblesmoep!'
+        option key      'egalbeiwelchemwetterTIlab!'
 
 ###	Use these to listen for connections.
 ###	In our build we don't even include a DHCP server!
